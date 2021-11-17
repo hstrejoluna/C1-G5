@@ -1,0 +1,20 @@
+{
+  "name": "rest-api-c1-g5",
+  "version": "1.0.0",
+  "description": "REST API para tener como base",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "REST",
+    "API",
+    "Backend",
+    "Node"
+  ],
+  "author": "Hector Sebastian Trejo Luna",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
