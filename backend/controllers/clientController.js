@@ -47,3 +47,13 @@ exports.updateClient = async (req, res, next) => {
     next();
   }
 };
+
+exports.deleteClient = async (req, res, next) => {
+  try {
+    await Clients.findOneAndDelete({ _id: req.params.idClient });
+    res.json({ message: "Client has successfully deleted" });
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
