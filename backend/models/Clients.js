@@ -12,7 +12,7 @@ const clientsSchema = new Schema({
     lowercase: true,
     trim: true,
   },
-  department: {
+  departure: {
     type: String,
     trim: true,
   },
