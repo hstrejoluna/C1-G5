@@ -2,15 +2,21 @@ const express = require("express");
 const routes = require("./routes");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const cors = require("cors");
+
 
 require("dotenv").config({ path: "variables.env" });
 require("./config/db");
 
+
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use("/", routes());
 
+/
 app.use(
   session({
     secret: process.env.SECRET,
@@ -23,6 +29,6 @@ app.use(
   })
 );
 
-// habilitar el bodyparser
+
 
 app.listen(process.env.PORT);
