@@ -31,3 +31,19 @@ exports.showClient = async (req, res, next) => {
 
   res.json(client);
 };
+
+exports.updateClient = async (req, res, next) => {
+  try {
+    const client = await Clients.findOneAndUpdate(
+      { _id: req.params.idClient },
+      req.body,
+      {
+        new: true,
+      }
+    );
+    res.json(client);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
