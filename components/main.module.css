@@ -1,0 +1,73 @@
+
+.container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 414px;
+    height: 1071px;
+    margin: 0 auto;
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),url(../public//assets/cover.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 57px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #FFFFFF;
+}
+
+.subtitle {
+    width: 302px;
+    height: 90px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 30px;
+    text-align: center;
+    margin: 40px auto;
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 1);
+
+}
+
+.container_btn {
+    width: 200px;
+    height: 110px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+      
+}
+
+.container_btn .first_btn{
+    height: 42px;
+    width: 185px;
+    border-radius: 37px;
+    background: rgba(35, 166, 240, 1);
+    color:rgba(255, 255, 255, 1);
+    font-weight: 700;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+}
+
+.second_btn {
+    width: 157px;
+    height: 42px;
+    border-radius: 37px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 1);
+    color:rgba(255, 255, 255, 1);
+    font-weight: 700; 
+    cursor: pointer;
+}

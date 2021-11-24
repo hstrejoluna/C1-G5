@@ -1,5 +1,7 @@
+import classes from './cards.module.css';
 
-function Cards(){
+
+function Cards(props){
     return(
         <div>
             <h1>Cards</h1>

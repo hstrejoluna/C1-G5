@@ -1,12 +1,21 @@
-import Cards from "../components/Cards";
+import Plans from "../components/Plans";
+import Main from "../components/Main";
+import Head from 'next/head'
 
-function HomePage(){
+
+function PrincipalPage(props){
   return (
     <div>
-      <h1>The Home Page</h1>
-      <Cards></Cards>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet"/>
+      </Head>
+      
+      <Main></Main>
+      <Plans></Plans>
+      
     </div>
   )
 };
 
-export default HomePage;
+export default PrincipalPage;
