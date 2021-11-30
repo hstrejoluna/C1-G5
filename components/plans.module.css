@@ -39,6 +39,7 @@
     justify-content: space-around;
     align-items: center;
     background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
     border: 1px solid rgba(35, 166, 240, 1);
     padding: 0 25px 0 25px;
 
