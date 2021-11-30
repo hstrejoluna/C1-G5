@@ -4,11 +4,13 @@ import classes from './plans.module.css';
 function Plans(props){
     return(
         <div className={classes.container_plans}>
-                <h2>Pricing</h2>
+            <div>
+            <h2>Pricing</h2>
                 <p>Problems trying to resolve 
                 the conflict between the two major 
                 realms of Classical physics: 
                 Newtonian mechanics</p>
+            </div>
             <div className={classes.subcontainer}>
                 <h3>FREE</h3>
                 <h5>Organize across all 
