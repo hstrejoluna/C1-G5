@@ -13,10 +13,10 @@ require("./config/db");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors()); // backend
 app.use("/", routes());
 
-/
+
 app.use(
   session({
     secret: process.env.SECRET,
