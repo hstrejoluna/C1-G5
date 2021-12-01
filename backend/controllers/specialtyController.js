@@ -13,8 +13,8 @@ exports.newSpecialty = async (req, res, next) => {
 
 exports.showSpecialties = async (req, res, next) => {
   try {
-    const Specialties = await Specialties.find({});
-    res.json(Specialties);
+    const specialties = await Specialties.find({});
+    res.json(specialties);
   } catch (error) {
     console.log(error);
     next();
