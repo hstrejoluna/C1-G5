@@ -42,5 +42,11 @@ module.exports = function () {
     specialtyController.deleteSpecialty
   );
 
+  /////////////////////////////////
+  // Operaciones para profesionales
+  /////////////////////////////////
+
+  // Agrega nuevos profesionales via POST
+
   return router;
 };
