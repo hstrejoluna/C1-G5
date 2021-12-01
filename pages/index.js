@@ -3,6 +3,7 @@ import Main from "../components/Main";
 import Header from '../components/Header';
 import Cards from '../components/Cards';
 import Footer from '../components/Footer';
+import Form from '../components/Form';
 
 
 import Head from 'next/head'
@@ -28,7 +29,7 @@ function PrincipalPage(props){
       {
         "id":3,
         "name": "Basic dental services",
-        "active": true
+        "active": false
       },
       {   
         "id":4,
@@ -101,12 +102,12 @@ function PrincipalPage(props){
         {   
           "id":4,
           "name": "Special procedures",
-          "active": false
+          "active": true
         },
         {
           "id":5,
           "name": "Email and community support",
-          "active": false
+          "active": true
         },
     ]
   }, 
@@ -128,6 +129,7 @@ function PrincipalPage(props){
       <Cards></Cards>
       {list_plans}
       <Footer></Footer>
+      <Form></Form>
       
     </div>
   )
