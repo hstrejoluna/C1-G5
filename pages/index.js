@@ -49,7 +49,7 @@ function PrincipalPage(props){
         {
           "name": "GOLD",
           "slogan": "Healthcare at your fingerprints",
-          "price": 50,
+          "price": 70,
           "services": [
         {
           "id":1,
@@ -82,7 +82,7 @@ function PrincipalPage(props){
         {
           "name": "DIAMOND",
           "slogan": "Healthcare at your fingerprints",
-          "price": 50,
+          "price": 90,
           "services": [
           {
           "id":1,
@@ -129,7 +129,7 @@ function PrincipalPage(props){
       <Cards></Cards>
       {list_plans}
       <Footer></Footer>
-      <Form></Form>
+      
       
     </div>
   )

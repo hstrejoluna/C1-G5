@@ -1,5 +1,6 @@
 import classes from './main.module.css';
 import Image from 'next/image';
+import Form from './Form';
 
 
 function Main(props){
@@ -13,6 +14,7 @@ function Main(props){
                 <button className={classes.first_btn}>Get Quote Now</button>
                 <button className={classes.second_btn}>Learn More</button>
             </div>
+            <Form></Form>
         </div>
     );
 }
