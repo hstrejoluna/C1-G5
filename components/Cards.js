@@ -42,16 +42,16 @@ function Cards(props) {
                 </clipPath>
               </defs>
             </svg>
-
-            <h4 style={{ margin: "15px" }}>Titulo Titulo</h4>
+            <h4 style={{ marginLeft:'15px', width:'218px' }}>Standard Medicine Services</h4>
           </div>
           <div className={classes.classContainertext}>
             <ul>
-              <li> The best products start with Figma </li>
-              <li> Design with real data </li>
-              <li> Lightning fast prototyping </li>
-              <li> Fastest way to organize </li>
-              <li> Work at the speed of thought.</li>
+              <li> Emergency services 24/7 </li>
+              <li> Hospitalization services </li>
+              <li> Basic dental care </li>
+              <li> Medical care with 300 professionals attached to the network </li>
+              <li> Special procedures</li>
+              <li> Telemedicine</li>
               <a href="#">
                 <li>
                   {" "}
@@ -90,15 +90,17 @@ function Cards(props) {
               </defs>
             </svg>
 
-            <h4 style={{ margin: "15px" }}>Titulo Titulo</h4>
+
+            <h4 style={{ marginLeft:'15px', width:'218px' }}>Complementary Medicine Services</h4>
           </div>
           <div className={classes.classContainertext}>
             <ul>
-              <li> The best products start with Figma </li>
-              <li> Design with real data </li>
-              <li> Lightning fast prototyping </li>
-              <li> Fastest way to organize </li>
-              <li> Work at the speed of thought.</li>
+              <li> Access to an exclusive hospital network </li>
+              <li> Care network: Doctor of free choice </li>
+              <li> Preventive dentistry </li>
+              <li> Care network: Doctor of free choice </li>
+              <li> Gynecology emergencies</li>
+              <li> Dermatological services</li>
               <a href="#">
                 <li>
                   {" "}
@@ -138,15 +140,15 @@ function Cards(props) {
               </defs>
             </svg>
 
-            <h4 style={{ margin: "15px" }}>Titulo Titulo</h4>
+            <h4 style={{ marginLeft:'15px', width:'218px' }}>Special Medicine Services</h4>
           </div>
           <div className={classes.classContainertext}>
             <ul>
-              <li> The best products start with Figma </li>
-              <li> Design with real data </li>
-              <li> Lightning fast prototyping </li>
-              <li> Fastest way to organize </li>
-              <li> Work at the speed of thought.</li>
+              <li> Direct access to more than 100 medical specialties </li>
+              <li> Home health care 24/7, 365 days a year </li>
+              <li> Hospitalization in a single room </li>
+              <li> Travel assistance </li>
+              <li> Access to an exclusive hospital network</li>
               <a href="#">
                 <li>
                   {" "}
