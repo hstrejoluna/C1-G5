@@ -1,4 +1,4 @@
-function ConfBook(props){
+function Confirm_data(props){
     return (
       <div>
         <h1>Confirmation Booking</h1>
@@ -6,4 +6,4 @@ function ConfBook(props){
     )
   };
   
-  export default ConfBook;
+  export default Confirm_data;
