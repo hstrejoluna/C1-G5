@@ -1,6 +1,9 @@
 import classes from './form.module.css';
+import Link from 'next/link';
+import Confirm_data from '../pages/confirm_data';
 
 function Form(props){
+
     return(
         <div>
             <form className={classes.container_form}>
@@ -31,7 +34,6 @@ function Form(props){
                 <label for="speciality">Choose a Medical speciality*</label>
                 <select id="speciality" name="speciality">
                 <option value="Select">please Select</option>
-                <option value="Default">Default</option>
                 <option value="Cardiology">Cardiology</option>
                 <option value="Ginecology">Ginecology</option>
                 <option value="Orthopedics">Orthopedics</option>
@@ -41,7 +43,7 @@ function Form(props){
                 <label for="professional">Choose a Professional*</label>
                 <select id="professional" name="professional">
                 <option value="">Please Select</option>
-                <option value="Default">Default</option>
+                <option value="Default">Available</option>
                 <option value="Alfredo Peréz Cifuentes">Alfredo Peréz Cifuentes</option>
                 <option value="Jimena Gómez Aristizabal">Jimena Gómez Aristizabal</option>
                 <option value="Ernesto Hernández Santacruz">Ernesto Hernández Santacruz</option>
@@ -58,7 +60,9 @@ function Form(props){
 
                 <label for="reservationtime">Reservation date and time*</label>
                 <input type="datetime-local" id="reservationtime" name="reservationtime"/>
-                <button className={classes.button_confirm}>Make Appointment</button>
+                <button className={classes.button_confirm}>
+                <Link href="confirm_data"><a>Make Appointment</a></Link>
+                </button>
             </form>
             
         </div>

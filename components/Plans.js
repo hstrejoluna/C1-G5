@@ -3,6 +3,7 @@ import Image from 'next/image'
 import iconactive from '../public/assets/icn-circle circle-xs secondary-color-1.svg';
 import iconinactive from '../public/assets/icn-circle circle-xs mute.svg';
 
+
 function Plans(props){
     const service_list = props.info_services.services.map( service => 
         <div key={service.id} className={classes.item}>
