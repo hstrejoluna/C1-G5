@@ -1,8 +1,48 @@
 .container_confirm {
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-top: 50px;
+    
+}
+
+.container_confirm h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #333333;
+    background: #FFFFFF;
+    text-shadow: 2px 2px 0px #FFFFFF, 4px 4px 0px rgba(0,0,0,0.15);
+    margin: 50px auto 50px auto;
+}
+
+.container_info_details{
+    display:flex;
+    flex-direction: row;
+    border: 2px solid rgb(172, 170, 170);
+    justify-content: space-around;
+    padding:10px;
+    
+}
+
+.container_info_details ul {
+    list-style: none;
+}
+
+.container_info_details li{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #8a8a8a;
+    margin:10px;
 
 }
+
+
+
+
