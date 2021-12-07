@@ -1,59 +1,39 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 414px;
-  height: 532px;
-  background: #f7f7f7;
-}
-
-.logo {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 32px;
-  letter-spacing: 0.1px;
-  color: #252b42;
-  margin-left: 35px;
-}
-
-.listado {
-  margin: 164px 0 0 0;
-  padding: 0;
-}
-.list {
-  display: flex;
-  justify-content: center;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.9rem;
-  line-height: 45px;
-  text-align: center;
-  letter-spacing: 0.2px;
-  font-family: "Montserrat", sans-serif;
-  color: #737373;
-}
-
-.line {
-  fill: none;
-  stroke: black;
-  stroke-width: 6;
-}
-
-.icons {
-  display: flex;
-  color: #737373;
-  margin-right: 38px;
-  align-items: center;
-}
-
-.svg {
-  margin-right: 20px;
-}
-
-.nav {
-  display: flex;
+.container_header{
+  display:flex;
   justify-content: space-between;
-  align-items: center;
+  background: rgba(246, 246, 246, 1);
+  border-bottom: 1px solid gray;
+  height: 65px;
 }
+
+.container_header h1 {
+  padding: 10px 0 10px 20px;
+  font-size: 2rem;
+  color: rgba(35, 166, 240, 1);
+  text-shadow: 2px 2px 0px #FFFFFF, 4px 4px 0px rgba(0,0,0,0.15);
+}
+
+.navbar {
+  width: 123px;
+  height: 190px;
+  margin: 65px 0 20px 0px;
+  background: rgba(246, 246, 246, 1);
+  padding: 0px;
+  display: none;
+}
+
+.navbar li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  list-style: none;
+  color: rgba(115, 115, 115, 1);
+
+}
+
+
+  
