@@ -4,10 +4,10 @@ const router = express.Router();
 const clientController = require("../controllers/clientController");
 const specialtyController = require("../controllers/specialtyController");
 const professionalController = require("../controllers/professionalController");
+const locationController = require("../controllers/locationController");
 
 module.exports = function () {
-
-    //////////////////////////////////
+  //////////////////////////////////
   // Operaciones para clientes
   //////////////////////////////////
 
@@ -75,6 +75,25 @@ module.exports = function () {
     "/professionals/:idProfessional",
     professionalController.deleteProfessional
   );
+
+  /////////////////////////////////
+  // Operaciones para ubicaciones (Locations)
+  /////////////////////////////////
+
+  // Agrega nuevos profesionales via POST
+  router.post("/locations", locationController.newLocation);
+
+  // Obtiene todos los profesionales
+  router.get("/locations", locationController.showLocations);
+
+  // Muestra un profesional en especifico (ID)
+  router.get("/locations/:idLocation", locationController.showLocation);
+
+  // Actualiza profesional
+  router.put("/locations/:idLocation", locationController.updateLocation);
+
+  // Elimina profesional
+  router.delete("/locations/:idLocation", locationController.deleteLocation);
 
   return router;
 };
