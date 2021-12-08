@@ -1,91 +1,87 @@
-.container {
-  height: 100%;
+.container_general {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 1500px;
+  background: rgba(255, 255, 255, 1);
 }
 
-.title {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
+.container_title {
+  width: 330px;
+  height: 200px;
+}
+
+.container_title h1{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
   font-style: normal;
-  font-weight: bold;
-  font-size: 3.5rem;
+  font-weight: 700;
   line-height: 57px;
   letter-spacing: 0.2px;
-  width: 323px;
-  height: 114px;
-}
-
-.text {
-  width: 321px;
-  height: 80px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  /* or 143% */
-
   text-align: center;
-  letter-spacing: 0.2px;
-
-  /* second-text-color */
-
-  color: #737373;
+  margin-top: 40px;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  width: 328px;
-  
-  transition: 0.3s;
-  border-radius: 10px;
-  margin: 30px 0 30px 0;
-  background-color: #d9edff;
+.container_title p {
+    width: 271px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight:bold;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    color: rgba(115, 115, 115, 1);
+    margin: 0 auto;
+
 }
 
-.classContainertitle {
-  height: 132px;
-  width: 328px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  display: flex;
+.container_icon {
+  height: 100px;
+  display:flex;
   justify-content: center;
   align-items: center;
-  letter-spacing: 0.1px;
-  color: #252b42;
-  transition: 0.3s;
-  border-radius: 10px;
-  background-color: #d9edff;
+  background-color: rgb(183, 227, 252);
+  border-radius: 15px;
+  
+
 }
-.classContainertext {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d9edff;
-  transition: 0.3s;
-  background-color: white;
-  height: 100%;
-  border-radius: 10px;
-  margin-top: 2px;
-  font-family: Montserrat;
+
+.container_icon h4 {
+  font-size: 1.2rem;
   font-style: normal;
-  padding: 30px 50px;
-  font-size: 14px;
+  font-weight: 700;
   line-height: 24px;
-  /* identical to box height, or 171% */
+  letter-spacing: 0.1px;
+  text-align: left;
+  color: rgba(37, 43, 66, 1);
+  margin-left: 10px;
 
-  letter-spacing: 0.2px;
-
-  /* second-text-color */
-
-  color: #737373;
 }
 
-.cardContainer {
-  padding: 2px 16px;
+.container_card {
+  width: 328px;
+  height: 400px;
+  border-radius: 15px;
+  background: rgb(250, 247, 247);
+  margin-top: 20px;
+  position: relative;
+  
+}
+
+.container_card li {
+  font-size: 1.3rem;
+  font-style: normal;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: rgba(115, 115, 115, 1);
+  list-style: none;
+  margin-top: 15px;
+ 
+}
+
+.container_card ul {
+  padding-right: 40px;
+  
 }

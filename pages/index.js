@@ -129,7 +129,7 @@ function PrincipalPage(props){
       
       <Header></Header>
       <Main></Main>
-      {/* <Cards></Cards> */}
+      <Cards></Cards>
       {list_plans}
       <Footer></Footer>
       
