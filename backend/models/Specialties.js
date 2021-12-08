@@ -6,10 +6,6 @@ const specialtiesSchema = new Schema({
     type: String,
     trim: true,
   },
-  departure: {
-    type: String,
-    trim: true,
-  },
 });
 
 module.exports = mongoose.model("Specialties", specialtiesSchema);
