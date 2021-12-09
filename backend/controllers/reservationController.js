@@ -35,6 +35,7 @@ exports.showReservation = async (req, res, next) => {
   }
 
   res.json(reservation);
+  return;
 };
 
 exports.updateReservation = async (req, res, next) => {

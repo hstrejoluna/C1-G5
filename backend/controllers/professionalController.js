@@ -30,6 +30,7 @@ exports.showProfessional = async (req, res, next) => {
   }
 
   res.json(professional);
+  return;
 };
 
 exports.updateProfessional = async (req, res, next) => {
