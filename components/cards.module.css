@@ -1,8 +1,9 @@
 .container_general {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1500px;
+  height: 1600px;
   background: rgba(255, 255, 255, 1);
 }
 
@@ -44,7 +45,6 @@
   background-color: rgb(183, 227, 252);
   border-radius: 15px;
   
-
 }
 
 .container_icon h4 {
@@ -56,7 +56,6 @@
   text-align: left;
   color: rgba(37, 43, 66, 1);
   margin-left: 10px;
-
 }
 
 .container_card {
@@ -65,8 +64,8 @@
   border-radius: 15px;
   background: rgb(250, 247, 247);
   margin-top: 20px;
-  position: relative;
-  
+  margin-bottom: 40px;
+  position: relative; 
 }
 
 .container_card li {
@@ -78,10 +77,45 @@
   color: rgba(115, 115, 115, 1);
   list-style: none;
   margin-top: 15px;
- 
 }
 
 .container_card ul {
   padding-right: 40px;
   
+}
+
+@media only screen and (min-width:767px) and (max-width: 1084px){
+  .responsive_container{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+  .container_general{
+    height: 1150px;
+  }
+  .container_card{
+    margin: 20px;
+  }
+
+}
+
+@media only screen and (min-width:1084px) and (max-width: 1500px){
+  .responsive_container{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+  .container_general{
+    height: 750px;
+  }
+  .container_card{
+    margin: 20px;
+  }
+
 }

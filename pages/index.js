@@ -4,12 +4,8 @@ import Header from '../components/Header';
 import Cards from '../components/Cards';
 import Footer from '../components/Footer';
 import Form from '../components/Form';
-
-
-
-
-
 import Head from 'next/head'
+import classes from "../components/plans.module.css";
 
 
 function PrincipalPage(props){
@@ -130,7 +126,9 @@ function PrincipalPage(props){
       <Header></Header>
       <Main></Main>
       <Cards></Cards>
+      <div className={classes.container_plans_responsive}>
       {list_plans}
+      </div>
       <Footer></Footer>
       
       

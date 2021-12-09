@@ -18,9 +18,10 @@ function Plans(props){
                 <h2>Pricing</h2>
                 <p>Access the best health plans and services and improve your quality of life</p>
             </div>
-            <div className={classes.subcontainer}>
-                <h3>{props.info_services.name}</h3>
-                <h5>{props.info_services.slogan}</h5>
+            <div className={classes.container_responsive}>
+                <div className={classes.subcontainer}>
+                    <h3>{props.info_services.name}</h3>
+                    <h5>{props.info_services.slogan}</h5>
                 <div className={classes.container_price}>
                     <h2>{props.info_services.price}</h2>
                     <p className={classes.price}>$</p>
@@ -30,7 +31,8 @@ function Plans(props){
                     { service_list }
                 </div>
                <button className={classes.button_plans}>Get Plan now</button>      
-            </div> 
+                </div> 
+            </div>  
         </div>
     );
 }

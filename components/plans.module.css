@@ -1,8 +1,10 @@
 .container_plans{
-    height: 1000px;
+    width: 100%;
+    height: 1150px;
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
     background: rgba(250, 250, 250, 1);   
 }
 
@@ -150,3 +152,9 @@
     box-shadow: 3px 3px 8px 2px rgba(0,0,0,0.80);
     cursor: pointer;
 }
+
+
+@media only screen and (min-width:767px) and (max-width: 1500px){
+    
+  }
+
