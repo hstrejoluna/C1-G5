@@ -5,6 +5,7 @@ const clientController = require("../controllers/clientController");
 const specialtyController = require("../controllers/specialtyController");
 const professionalController = require("../controllers/professionalController");
 const locationController = require("../controllers/locationController");
+const reservationController = require("../controllers/reservationController");
 
 module.exports = function () {
   //////////////////////////////////
@@ -98,7 +99,7 @@ module.exports = function () {
   /////////////////////////////////
   // Operaciones para reservaciones
   /////////////////////////////////
-  
+  router.post("/reservations", reservationController.newReservation);
 
   return router;
 };

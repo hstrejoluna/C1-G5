@@ -1,13 +1,16 @@
 const Reservations = require("../models/Reservations");
 const Clients = require("../models/Clients");
+const Specialties = require("../models/Specialties");
 const Professionals = require("../models/Professionals");
 const Locations = require("../models/Locations");
-const Specialties = require("../models/Specialties");
 
 exports.newReservation = async (req, res, next) => {
-    
-    
-    const reservation = new Reservations(req.body);
+  const client = new Clients(req.body);
+  const specialty = new Specialties(req.body);
+  const professional = new Professionals(req.body);
+  const location = new Locations(req.body);
+
+  const reservation = new Reservations(req.body);
 
   try {
     await reservation.save();
