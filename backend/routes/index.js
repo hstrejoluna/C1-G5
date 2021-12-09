@@ -99,7 +99,18 @@ module.exports = function () {
   /////////////////////////////////
   // Operaciones para reservaciones
   /////////////////////////////////
+
+  // Agrega una nueva reservacion via POST
   router.post("/reservations", reservationController.newReservation);
+  
+  // Obtiene todas las reservaciones
+  router.get("/reservations", reservationController.showReservations);
+
+  // Muestra una reservacion en especifico (ID)
+  router.get("/reservations/:idReservation", reservationController.showReservation);
+
+  // Actualiza reservacion
+  router.put("/reservations/:idReservation", reservationController.updateReservation);
 
   return router;
 };

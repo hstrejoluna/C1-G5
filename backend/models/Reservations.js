@@ -3,23 +3,53 @@ const Schema = mongoose.Schema;
 
 const ReservationsSchema = new Schema({
   client: {
-    type: Schema.Types.ObjectId,
-    ref: "users",
-    required: true,
+    name: {
+      type: String,
+      trim: true,
+    },
+    lastname: {
+      type: String,
+      trim: true,
+    },
+    birthday: {
+      day: {
+        type: Number,
+      },
+      month: {
+        type: Number,
+      },
+      year: {
+        type: Number,
+      },
+    },
+    ssnorid: {
+      type: String,
+      trim: true,
+    },
+    email: {
+      type: String,
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+    phone: {
+      type: String,
+      trim: true,
+    },
   },
   professional: {
     type: Schema.Types.ObjectId,
-    ref: "professionals",
+    ref: "Professionals",
     required: true,
   },
   specialty: {
     type: Schema.Types.ObjectId,
-    ref: "specialties",
+    ref: "Specialties",
     required: true,
   },
   location: {
     type: Schema.Types.ObjectId,
-    ref: "locations",
+    ref: "Locations",
     required: true,
   },
   reservation: {
