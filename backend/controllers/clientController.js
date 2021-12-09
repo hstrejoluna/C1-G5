@@ -30,6 +30,7 @@ exports.showClient = async (req, res, next) => {
   }
 
   res.json(client);
+  return;
 };
 
 exports.updateClient = async (req, res, next) => {

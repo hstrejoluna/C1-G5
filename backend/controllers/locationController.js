@@ -30,6 +30,7 @@ exports.showLocation = async (req, res, next) => {
   }
 
   res.json(location);
+  return;
 };
 
 exports.updateLocation = async (req, res, next) => {
