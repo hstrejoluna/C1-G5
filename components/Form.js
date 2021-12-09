@@ -1,12 +1,46 @@
 import classes from './form.module.css';
-import Link from 'next/link';
-import confirm_data from '../pages/confirm_data';
+import Router from 'next/router'
 
 function Form(props){
+    
+    function handleSubmit(e) {
+        e.preventDefault();
+        const birthday = new Date(e.target.birthday.value);
+        const reservation = new Date(e.target.reservationtime.value);
+
+        const formdata = {
+            "client": {
+                "name": e.target.name.value,
+                "lastname": e.target.lastname.value,
+                "birthday": {
+                    "day": birthday.getDate(),
+                    "month": birthday.getMonth(),
+                    "year": birthday.getFullYear()
+                },
+                "ssnorid": e.target.SSN.value,
+                "email": e.target.email.value,
+                "phone": e.target.phone.value
+            },
+            "professional": e.target.professional.value,
+            "specialty": e.target.speciality.value,
+            "location": e.target.location.value,
+            "reservation": {
+                "time": {
+                    "hour": reservation.getHours(),
+                    "minute": reservation.getMinutes()
+                },
+                "day": reservation.getDate(),
+                "month": reservation.getMonth(),
+                "year": reservation.getFullYear()
+            }
+        }
+        console.log(formdata);
+        Router.push('/confirm_data')
+    }
 
     return(
         <div>
-            <form className={classes.container_form}>
+            <form onSubmit={handleSubmit} className={classes.container_form}>
                 <div>
                 <h1>BOOK APPOINTMENT</h1>
                 </div>
@@ -60,11 +94,8 @@ function Form(props){
 
                 <label htmlFor="reservationtime">Reservation date and time*</label>
                 <input type="datetime-local" id="reservationtime" name="reservationtime"/>
-                <button className={classes.button_confirm}>
-                <Link href="/confirm_data"><a>Make Appointment</a></Link>
-                </button>
-            </form>
-            
+                <button className={classes.button_confirm} type="submit">Make Appointment</button>
+            </form>  
         </div>
     );
 }
