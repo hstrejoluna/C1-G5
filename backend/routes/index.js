@@ -95,5 +95,10 @@ module.exports = function () {
   // Elimina profesional
   router.delete("/locations/:idLocation", locationController.deleteLocation);
 
+  /////////////////////////////////
+  // Operaciones para reservaciones
+  /////////////////////////////////
+  
+
   return router;
 };

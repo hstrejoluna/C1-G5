@@ -5,7 +5,10 @@ const Locations = require("../models/Locations");
 const Specialties = require("../models/Specialties");
 
 exports.newReservation = async (req, res, next) => {
-  const reservation = new Reservations(req.body);
+    
+    
+    const reservation = new Reservations(req.body);
+
   try {
     await reservation.save();
     res.json({ message: "Reservation added successfully :b" });
