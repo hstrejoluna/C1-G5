@@ -3,6 +3,7 @@
   justify-content: space-between;
   background: rgba(246, 246, 246, 1);
   height: 65px;
+  cursor: pointer;
 }
 
 .container_header h1 {
@@ -31,6 +32,7 @@
   text-align: center;
   list-style: none;
   color: rgba(115, 115, 115, 1);
+  cursor: pointer;
 
 }
 

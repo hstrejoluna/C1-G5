@@ -1,6 +1,6 @@
 import classes from './form.module.css';
 import Link from 'next/link';
-import Confirm_data from '../pages/confirm_data';
+import confirm_data from '../pages/confirm_data';
 
 function Form(props){
 

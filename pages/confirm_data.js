@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import iconconfirmation from '../public/assets/check_double.svg';
 import classes from './confirm.module.css';
+import Link from 'next/link';
+import send_data from '../pages/confirm_data';
 
 
 function Confirm_data(props){
@@ -50,6 +52,9 @@ function Confirm_data(props){
               <li></li>
             </ul>
           </div> 
+          <button>
+          <Link href="/send_data"><a>submit</a></Link>
+          </button>
       </div>
     )
   };
