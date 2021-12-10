@@ -1,7 +1,8 @@
 .footer_container {
+  width: 100%;
   display:flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: space-between;
   align-items: center;
   height: 800px;
   background: rgba(255, 255, 255, 1);
@@ -9,15 +10,17 @@
 
 .footer_container h2 {
   width: 160px;
+  /* height: 64px; */
   font-family: 'Montserrat', sans-serif;
   font-family: Montserrat;
   font-size: 2.2rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 32px;
+  /* line-height: 32px; */
   letter-spacing: 0.1px;
   text-align: left;
   color: rgba(37, 43, 66, 1);
+  padding:0px;
 
 }
 
@@ -45,6 +48,10 @@
 
 }
 
+.first_seccion{
+  height: 192px;
+}
+
 .footer_container ul {
   padding: 0px;
 }
@@ -53,4 +60,18 @@
   display:flex;
  justify-content: space-evenly;
   
+}
+
+@media only screen and (min-width:767px) and (max-width: 1500px){
+  .footer_container {
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 300px;
+    align-items: center;
+  }
+  
+
 }

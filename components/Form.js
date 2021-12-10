@@ -65,6 +65,14 @@ function Form(props){
                 <label htmlFor="phone">Enter phone number*</label>
                 <input type="tel" id="phone" name="phone" placeholder="Enter Phohe Number"/>
 
+                <label htmlFor="location">Choose a Location*</label>
+                <select id="location" name="location">
+                <option value="">Please Select</option>
+                <option value="El tintal">El tintal</option>
+                <option value="Laureles">Laureles</option>
+                <option value="Castilla">Castilla</option>
+                </select>
+
                 <label htmlFor="speciality">Choose a Medical speciality*</label>
                 <select id="speciality" name="speciality">
                 <option value="Select">please Select</option>
@@ -82,14 +90,6 @@ function Form(props){
                 <option value="Jimena Gómez Aristizabal">Jimena Gómez Aristizabal</option>
                 <option value="Ernesto Hernández Santacruz">Ernesto Hernández Santacruz</option>
                 <option value="Natalia Marín Díaz">Natalia Marín Díaz</option>
-                </select>
-
-                <label htmlFor="location">Choose a Location*</label>
-                <select id="location" name="location">
-                <option value="">Please Select</option>
-                <option value="El tintal">El tintal</option>
-                <option value="Laureles">Laureles</option>
-                <option value="Castilla">Castilla</option>
                 </select>
 
                 <label htmlFor="reservationtime">Reservation date and time*</label>

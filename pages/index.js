@@ -126,9 +126,10 @@ function PrincipalPage(props){
       <Header></Header>
       <Main></Main>
       <Cards></Cards>
-      <div className={classes.container_plans_responsive}>
+      <div className={classes.container_responsive}>
       {list_plans}
       </div>
+      
       <Footer></Footer>
       
       
