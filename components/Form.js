@@ -2,12 +2,11 @@ import classes from './form.module.css';
 import Router from 'next/router'
 
 function Form(props){
-    
+
     function handleSubmit(e) {
         e.preventDefault();
         const birthday = new Date(e.target.birthday.value);
         const reservation = new Date(e.target.reservationtime.value);
-
         const formdata = {
             "client": {
                 "name": e.target.name.value,
@@ -33,9 +32,30 @@ function Form(props){
                 "month": reservation.getMonth(),
                 "year": reservation.getFullYear()
             }
-        }
+        };
         console.log(formdata);
-        Router.push('/confirm_data')
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formdata)
+        };    
+        fetch(
+            'http://localhost:5000/reservations/', 
+            requestOptions
+        ).then(async response => {
+            const isJson = response.headers.get('content-type')?.includes('application/json');
+            const data = isJson && await response.json();
+            if (!response.ok) {
+                const error = (data && data.message) || response.status;
+                console.log(error);
+            }
+            else {
+                Router.push('/confirm_data')
+            }
+        })
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
     }
 
     return(
@@ -68,28 +88,27 @@ function Form(props){
                 <label htmlFor="location">Choose a Location*</label>
                 <select id="location" name="location">
                 <option value="">Please Select</option>
-                <option value="El tintal">El tintal</option>
-                <option value="Laureles">Laureles</option>
-                <option value="Castilla">Castilla</option>
+                <option value="61b10b91099d249eb56776b7">El tintal</option>
+                <option value="61b10b77099d249eb56776b5">Laureles</option>
+                <option value="61b10b99099d249eb56776b9">Castilla</option>
                 </select>
 
-                <label htmlFor="speciality">Choose a Medical speciality*</label>
+                <label htmlFor="speciality">Choose a Medical specialities*</label>
                 <select id="speciality" name="speciality">
                 <option value="Select">please Select</option>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Ginecology">Ginecology</option>
-                <option value="Orthopedics">Orthopedics</option>
-                <option value="General Medicine">General Medicine</option>
+                <option value="61b105e7ca04e6f9866dc344">Cardiology</option>
+                <option value="61b10600ca04e6f9866dc346">Ginecology</option>
+                <option value="61b1060eca04e6f9866dc348">Orthopedics</option>
+                <option value="61b10619ca04e6f9866dc34a">General Medicine</option>
                 </select>
 
                 <label htmlFor="professional">Choose a Professional*</label>
                 <select id="professional" name="professional">
                 <option value="">Please Select</option>
-                <option value="Default">Available</option>
-                <option value="Alfredo Peréz Cifuentes">Alfredo Peréz Cifuentes</option>
-                <option value="Jimena Gómez Aristizabal">Jimena Gómez Aristizabal</option>
-                <option value="Ernesto Hernández Santacruz">Ernesto Hernández Santacruz</option>
-                <option value="Natalia Marín Díaz">Natalia Marín Díaz</option>
+                <option value="61b107855b19f7a6654f3e56">Alfredo Peréz Cifuentes</option>
+                <option value="61b106ef5b19f7a6654f3e50">Jimena Gómez Aristizabal</option>
+                <option value="61b1075f5b19f7a6654f3e54">Ernesto Hernández Santacruz</option>
+                <option value="61b1073c5b19f7a6654f3e52">Natalia Marín Díaz</option>
                 </select>
 
                 <label htmlFor="reservationtime">Reservation date and time*</label>
