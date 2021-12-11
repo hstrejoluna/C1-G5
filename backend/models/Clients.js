@@ -27,7 +27,6 @@ const clientsSchema = new Schema({
   },
   email: {
     type: String,
-    unique: true,
     lowercase: true,
     trim: true,
   },
@@ -35,6 +34,7 @@ const clientsSchema = new Schema({
     type: String,
     trim: true,
   },
+
 });
 
 module.exports = mongoose.model("Clients", clientsSchema);

@@ -101,7 +101,9 @@ module.exports = function () {
   /////////////////////////////////
 
   // Agrega una nueva reservacion via POST
-  router.post("/reservations", reservationController.newReservation);
+  router.post("/reservations", 
+  clientController.newClient,
+  reservationController.newReservation);
   
   // Obtiene todas las reservaciones
   router.get("/reservations", reservationController.showReservations);
