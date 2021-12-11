@@ -8,24 +8,24 @@ function Cards(props) {
   return (
     <div className={classes.container_general}>
       <div className={classes.container_title}>
-          <h1>Leading Medicine</h1>
-          <p>Access the best health plans and services and improve your quality of life</p>
+        <h1>Medical Products</h1>
+        <p>Access the best health plans and services and improve your quality of life</p>
       </div>
-
-     <div className={classes.container_card}>
-        <div className={classes.container_icon}>
-          <Image src={iconcard}alt="icon"width={50}height={50}/>
-          <h4>Standard Medicine Services</h4>
-        </div>
-        <ul>
-            <li>-Emergency services 24/7</li>
-            <li>-Hospitalization services</li>
-            <li>-Basic dental care</li>
-            <li>-Medical care with 300 professionals attached to the network</li>
-            <li>-Special procedures</li>
-            <li>-Telemedicine</li>
-        </ul>
-    </div>   
+      <div className={classes.responsive_container}>
+        <div className={classes.container_card}>
+          <div className={classes.container_icon}>
+            <Image src={iconcard}alt="icon"width={50}height={50}/>
+            <h4>Standard Medicine Services</h4>
+          </div>
+            <ul>
+              <li>-Emergency services 24/7</li>
+              <li>-Hospitalization services</li>
+              <li>-Basic dental care</li>
+              <li>-Medical care with 300 professionals attached to the network</li>
+              <li>-Special procedures</li>
+              <li>-Telemedicine</li>
+          </ul>
+        </div>   
 
       <div className={classes.container_card}>
         <div className={classes.container_icon}>
@@ -55,7 +55,8 @@ function Cards(props) {
             <li>-Access to an exclusive hospital network</li>
           </ul>       
       </div>
-    </div>     
+    </div>
+  </div>     
   
   );
 }

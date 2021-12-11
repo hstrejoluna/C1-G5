@@ -1,0 +1,39 @@
+.container_general {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.container_general h1 {
+    font-family: 'Montserrat', sans-serif;
+    padding:30px;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+    text-align: center;
+    color: #0e0d0d;
+    text-shadow: 2px 2px 0px #FFFFFF, 4px 4px 0px rgba(0,0,0,0.15);
+}
+
+.container_general p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+    text-align: center;
+    color: #0e0d0d;
+    
+}
+
+.container_icons_save {
+    min-width: 200px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+ 

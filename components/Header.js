@@ -12,17 +12,21 @@ function Header(props) {
         <div>
           <h1>Colmedicine</h1>
         </div>
-        <Image src={iconsearch}alt="icon"width={24}height={24}/>
+        <div className={classes.icon_search}>
+          <Image src={iconsearch}alt="icon"width={24}height={24}/>
+        </div>
+        <div className={classes.icon_shopping}>
         <Image src={iconshopping}alt="icon"width={24}height={24}/>
+        </div>
+        <div className={classes.icon_menu}>
         <Image src={iconmenu}alt="icon"width={24}height={24}/>
-        <nav>
-        <ul className={classes.navbar}>
+        </div>
+          <ul className={classes.navbar}>
             <li>Home</li>
             <li>Products</li>
             <li>Pricing</li>
             <li>Contact</li>
-          </ul>
-        </nav>  
+          </ul> 
     </div>
   );
 }

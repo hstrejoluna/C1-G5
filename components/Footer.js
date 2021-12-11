@@ -7,21 +7,21 @@ import twitter from "../public/assets/twitter.svg";
 function Footer(props) {
   return (
     <div className={classes.footer_container}>
-      <div>
+      <ul className={classes.first_seccion}>
         <h2>Get In Touch</h2>
-        <p>Contact us</p>
+        <li>Contact us</li>
         <div className={classes.container_icons}>
-          <div>
-          <Image src={facebook}alt="icon"width={22}height={22}/>
-          </div>
-          <div>
-          <Image src={instagram}alt="icon"width={22}height={22}/>
-          </div>
-          <div>
-          <Image src={twitter}alt="icon"width={22}height={22}/>
-          </div>
+          <li>
+          <Image src={facebook}alt="icon"width={25}height={25}/>
+          </li>
+          <li>
+          <Image src={instagram}alt="icon"width={25}height={25}/>
+          </li>
+          <li>
+          <Image src={twitter}alt="icon"width={25}height={25}/>
+          </li>
         </div>
-      </div>
+      </ul>
 
       <ul>
         <h2>Company info</h2>
