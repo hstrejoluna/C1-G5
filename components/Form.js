@@ -13,19 +13,19 @@ function Form(props) {
     getProfessionals();
 
     async function getLocations() {
-      const response = await fetch("localhost:5000/locations");
+      const response = await fetch("http://localhost:5000/locations");
       const locationsdata = await response.json();
       setLocations(locationsdata);
     }
 
     async function getSpecialties() {
-      const response = await fetch("localhost:5000/specialties");
+      const response = await fetch("http://localhost:5000/specialties");
       const specialtiesdata = await response.json();
       setSpecialties(specialtiesdata);
     }
 
     async function getProfessionals() {
-      const response = await fetch("localhost:5000/professionals");
+      const response = await fetch("http://localhost:5000/professionals");
       const professionalsdata = await response.json();
       setProfessionals(professionalsdata);
     }
@@ -143,36 +143,40 @@ function Form(props) {
         />
 
         <label htmlFor="location">Choose a Location*</label>
-        <select id="location" name="location">
-          <option value="">Please Select</option>
-          <option value="61b10b91099d249eb56776b7">El tintal</option>
-          <option value="61b10b77099d249eb56776b5">Laureles</option>
-          <option value="61b10b99099d249eb56776b9">Castilla</option>
-        </select>
+        {locations && (
+          <select id="location" name="location">
+            <option value="">Please Choose a Location</option>
+            {locations.map((location, index) => (
+              <option key={index} value={location._id}>
+                {location.location}
+              </option>
+            ))}
+          </select>
+        )}
 
-        <label htmlFor="speciality">Choose a Medical specialities*</label>
-        <select id="speciality" name="speciality">
-          <option value="Select">please Select</option>
-          <option value="61b105e7ca04e6f9866dc344">Cardiology</option>
-          <option value="61b10600ca04e6f9866dc346">Ginecology</option>
-          <option value="61b1060eca04e6f9866dc348">Orthopedics</option>
-          <option value="61b10619ca04e6f9866dc34a">General Medicine</option>
-        </select>
+        <label htmlFor="speciality">Choose a Medical specialties*</label>
+        {specialties && (
+          <select id="specialty" name="specialty">
+            <option value="">Please Choose a Specialty</option>
+            {specialties.map((specialty, index) => (
+              <option key={index} value={specialty._id}>
+                {specialty.specialty}
+              </option>
+            ))}
+          </select>
+        )}
 
         <label htmlFor="professional">Choose a Professional*</label>
-        <select id="professional" name="professional">
-          <option value="">Please Select</option>
-          <option value="61b107855b19f7a6654f3e56">
-            Alfredo Peréz Cifuentes
-          </option>
-          <option value="61b106ef5b19f7a6654f3e50">
-            Jimena Gómez Aristizabal
-          </option>
-          <option value="61b1075f5b19f7a6654f3e54">
-            Ernesto Hernández Santacruz
-          </option>
-          <option value="61b1073c5b19f7a6654f3e52">Natalia Marín Díaz</option>
-        </select>
+        {professionals && (
+          <select id="professional" name="professional">
+            <option value="">Please Choose a Professional</option>
+            {professionals.map((professional, index) => (
+              <option key={index} value={professional._id}>
+                {professional.name + " " + professional.lastname}
+              </option>
+            ))}
+          </select>
+        )}
 
         <label htmlFor="reservationtime">Reservation date and time*</label>
         <input
