@@ -10,7 +10,7 @@ const professionalsSchema = new Schema({
     type: String,
     trim: true,
   },
-  speciality:{
+  specialty:{
     type: mongoose.Schema.ObjectId, // ObjectId de la coleccion Specialties
     ref: "Specialties",
     required: "The Speciality is required",
