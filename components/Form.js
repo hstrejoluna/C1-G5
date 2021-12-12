@@ -2,10 +2,12 @@ import classes from "./form.module.css";
 import Router from "next/router";
 import { useState, useEffect } from "react";
 
-function Form(props) {
+const Form = () => {
   const [locations, setLocations] = useState(null);
   const [specialties, setSpecialties] = useState(null);
   const [professionals, setProfessionals] = useState(null);
+  const [location, setLocation] = useState("");
+  const [specialty, setSpecialty] = useState("");
 
   useEffect(() => {
     getLocations();
@@ -18,18 +20,28 @@ function Form(props) {
       setLocations(locationsdata);
     }
 
+    // get specialties
     async function getSpecialties() {
       const response = await fetch("http://localhost:5000/specialties");
       const specialtiesdata = await response.json();
       setSpecialties(specialtiesdata);
     }
 
+    // get professionals
     async function getProfessionals() {
       const response = await fetch("http://localhost:5000/professionals");
       const professionalsdata = await response.json();
       setProfessionals(professionalsdata);
     }
   }, []);
+
+  const handleLocationChange = (e) => {
+    setLocation(e.target.value);
+  };
+
+  const handleSpecialtyChange = (e) => {
+    setSpecialty(e.target.value);
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -49,7 +61,7 @@ function Form(props) {
         phone: e.target.phone.value,
       },
       professional: e.target.professional.value,
-      specialty: e.target.speciality.value,
+      specialty: e.target.specialty.value,
       location: e.target.location.value,
       reservation: {
         time: {
@@ -144,7 +156,7 @@ function Form(props) {
 
         <label htmlFor="location">Choose a Location*</label>
         {locations && (
-          <select id="location" name="location">
+          <select id="location" name="location" onChange={handleLocationChange}>
             <option value="">Please Choose a Location</option>
             {locations.map((location, index) => (
               <option key={index} value={location._id}>
@@ -156,13 +168,21 @@ function Form(props) {
 
         <label htmlFor="speciality">Choose a Medical specialties*</label>
         {specialties && (
-          <select id="specialty" name="specialty">
+          <select
+            id="specialty"
+            name="specialty"
+            onChange={handleSpecialtyChange}
+          >
             <option value="">Please Choose a Specialty</option>
-            {specialties.map((specialty, index) => (
-              <option key={index} value={specialty._id}>
-                {specialty.specialty}
-              </option>
-            ))}
+            {specialties.map((specialty, index) => {
+              if (specialty.location === location) {
+                return (
+                  <option key={index} value={specialty._id}>
+                    {specialty.specialty}
+                  </option>
+                );
+              }
+            })}
           </select>
         )}
 
@@ -170,11 +190,15 @@ function Form(props) {
         {professionals && (
           <select id="professional" name="professional">
             <option value="">Please Choose a Professional</option>
-            {professionals.map((professional, index) => (
-              <option key={index} value={professional._id}>
-                {professional.name + " " + professional.lastname}
-              </option>
-            ))}
+            {professionals.map((professional, index) => {
+              if (professional.specialty === specialty) {
+                return (
+                  <option key={index} value={professional._id}>
+                    {professional.name + " " + professional.lastname}
+                  </option>
+                );
+              }
+            })}
           </select>
         )}
 
@@ -190,6 +214,6 @@ function Form(props) {
       </form>
     </div>
   );
-}
+};
 
 export default Form;
