@@ -37,6 +37,9 @@ module.exports = function () {
   // Obtiene todas las especialidades
   router.get("/specialties", specialtyController.showSpecialties);
 
+  // Obtiene especialidad por Ubicacion (ID)
+  router.get("/specialties/:location", specialtyController.showSpecialtiesByLocation);
+
   // Muestra una especialidad en especifico (ID)
   router.get("/specialties/:idSpecialty", specialtyController.showSpecialty);
 
@@ -89,6 +92,7 @@ module.exports = function () {
 
   // Muestra un profesional en especifico (ID)
   router.get("/locations/:idLocation", locationController.showLocation);
+
 
   // Actualiza profesional
   router.put("/locations/:idLocation", locationController.updateLocation);
