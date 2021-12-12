@@ -5,6 +5,7 @@ const LocationsSchema = new Schema({
   location: {
     type: String,
   },
+  
 });
 
 module.exports = mongoose.model("Locations", LocationsSchema);
