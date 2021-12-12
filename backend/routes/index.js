@@ -38,7 +38,10 @@ module.exports = function () {
   router.get("/specialties", specialtyController.showSpecialties);
 
   // Obtiene especialidad por Ubicacion (ID)
-  router.get("/specialties/:location", specialtyController.showSpecialtiesByLocation);
+  router.get(
+    "/specialties/:location",
+    specialtyController.showSpecialtiesByLocation
+  );
 
   // Muestra una especialidad en especifico (ID)
   router.get("/specialties/:idSpecialty", specialtyController.showSpecialty);
@@ -68,6 +71,18 @@ module.exports = function () {
     professionalController.showProfessional
   );
 
+  // Obtiene a los profesionales que tienen tal Especialidad (ID)
+  router.get(
+    "/professionals/:specialty",
+    professionalController.showProfessionalsBySpecialty
+  );
+
+  // Obtiene a los profesionales usando Especialidad y Ubicacion (ID)
+  router.get(
+    "/professionals/:location/:specialty",
+    professionalController.showProfessionalsByLocationAndSpecialty
+  );
+
   // Actualiza profesional
   router.put(
     "/professionals/:idProfessional",
@@ -93,7 +108,6 @@ module.exports = function () {
   // Muestra un profesional en especifico (ID)
   router.get("/locations/:idLocation", locationController.showLocation);
 
-
   // Actualiza profesional
   router.put("/locations/:idLocation", locationController.updateLocation);
 
@@ -105,18 +119,26 @@ module.exports = function () {
   /////////////////////////////////
 
   // Agrega una nueva reservacion via POST
-  router.post("/reservations", 
-  clientController.newClient,
-  reservationController.newReservation);
-  
+  router.post(
+    "/reservations",
+    clientController.newClient,
+    reservationController.newReservation
+  );
+
   // Obtiene todas las reservaciones
   router.get("/reservations", reservationController.showReservations);
 
   // Muestra una reservacion en especifico (ID)
-  router.get("/reservations/:idReservation", reservationController.showReservation);
+  router.get(
+    "/reservations/:idReservation",
+    reservationController.showReservation
+  );
 
   // Actualiza reservacion
-  router.put("/reservations/:idReservation", reservationController.updateReservation);
+  router.put(
+    "/reservations/:idReservation",
+    reservationController.updateReservation
+  );
 
   return router;
 };

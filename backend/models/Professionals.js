@@ -10,11 +10,15 @@ const professionalsSchema = new Schema({
     type: String,
     trim: true,
   },
-  specialty:{
+  specialty: {
     type: mongoose.Schema.ObjectId, // ObjectId de la coleccion Specialties
     ref: "Specialties",
     required: "The Speciality is required",
-  }
+  },
+  location: {
+    type: mongoose.Schema.ObjectId, // ObjectId de la coleccion Locations
+    ref: "Locations",
+  },
 });
 
 module.exports = mongoose.model("Professionals", professionalsSchema);

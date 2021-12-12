@@ -49,6 +49,35 @@ exports.updateProfessional = async (req, res, next) => {
   }
 };
 
+exports.showProfessionalsBySpecialty = async (req, res, next) => {
+  try {
+    const professionals = await Professionals.find({
+      specialty: req.params.specialty,
+    });
+    res.json(professionals);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+
+  return;
+};
+
+exports.showProfessionalsByLocationAndSpecialty = async (req, res, next) => {
+  try {
+    const professionals = await Professionals.find({
+      location: req.params.location,
+      specialty: req.params.specialty,
+    
+    });
+    res.json(professionals);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+  return;
+};
+
 exports.deleteProfessional = async (req, res, next) => {
   try {
     await Professionals.findOneAndDelete({ _id: req.params.idProfessional });
