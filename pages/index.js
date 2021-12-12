@@ -9,6 +9,7 @@ import classes from "../components/plans.module.css";
 
 
 function PrincipalPage(props){
+
   const info_plan = [
       {
       "name": "SILVER",
