@@ -21,6 +21,7 @@ exports.showLocations = async (req, res, next) => {
   }
 };
 
+
 exports.showLocation = async (req, res, next) => {
   const location = await Locations.findById(req.params.idLocation);
 

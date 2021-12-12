@@ -29,7 +29,10 @@ exports.showSpecialty = async (req, res, next) => {
     next();
   }
 
+
   res.json(specialty);
+
+  return;
 };
 
 exports.updateSpecialty = async (req, res, next) => {
@@ -47,6 +50,20 @@ exports.updateSpecialty = async (req, res, next) => {
     next();
   }
 };
+
+exports.showSpecialtiesByLocation = async (req, res, next) => {
+  try {
+    const specialties = await Specialties.find({
+      location: req.params.location,
+    });
+    res.json(specialties);
+  } catch (error) {
+    console.log(error+"error en el controlador, location es "+req.params.location);
+    next();
+  }
+
+  return;
+}
 
 exports.deleteSpecialty = async (req, res, next) => {
   try {

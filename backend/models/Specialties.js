@@ -6,6 +6,11 @@ const specialtiesSchema = new Schema({
     type: String,
     trim: true,
   },
+  location: {
+    type: Schema.Types.ObjectId,
+    ref: "Professionals",
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Specialties", specialtiesSchema);
