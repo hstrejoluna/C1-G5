@@ -4,13 +4,17 @@ const session = require("express-session");
 const cors = require("cors");
 
 require("dotenv").config({ path: "variables.env" });
-require("./config/db");
+const db = require("./config/db");
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors()); // backend
 app.use("/", routes());
+
+db.sync()
+  .then(() => console.log("Database connected"))
+  .catch((error) => console.log(error));
 
 app.use(
   session({

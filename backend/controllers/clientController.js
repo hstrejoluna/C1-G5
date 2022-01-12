@@ -1,11 +1,9 @@
 const Clients = require("../models/Clients");
-const reservationController = require("../controllers/reservationController");
 
 exports.newClient = async (req, res, next) => {
   const client = new Clients(req.body);
   try {
     await client.save();
-    await reservationController.newReservation()
 
     res.json({ message: "Client added successfully :b" });
   } catch (error) {

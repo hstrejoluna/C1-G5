@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const clientController = require("../controllers/clientController");
-const crypto = require("../controllers/crypto");
+const cryptoController = require("../controllers/cryptoController");
 
 module.exports = function () {
   //////////////////////////////////
@@ -29,19 +29,19 @@ module.exports = function () {
   /////////////////////////////////
 
   // Agrega nuevos cryptos via POST
-  router.post("/cryptos", crypto.newCrypto);
+  router.post("/cryptos", cryptoController.newCrypto);
 
   // Obtiene todos los cryptos
-  router.get("/cryptos", crypto.showCryptos);
+  router.get("/cryptos", cryptoController.showCryptos);
 
   // Muestra un crypto en especifico (ID)
-  router.get("/cryptos/:idCrypto", crypto.showCrypto);
+  router.get("/cryptos/:idCrypto", cryptoController.showCrypto);
 
   // Actualiza crypto
-  router.put("/cryptos/:idCrypto", crypto.updateCrypto);
+  router.put("/cryptos/:idCrypto", cryptoController.updateCrypto);
 
   // Elimina crypto
-  router.delete("/cryptos/:idCrypto", crypto.deleteCrypto);
+  router.delete("/cryptos/:idCrypto", cryptoController.deleteCrypto);
 
   return router;
 };

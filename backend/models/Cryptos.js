@@ -11,16 +11,16 @@ const Cryptos = db.define("cryptos", {
     type: Sequelize.STRING(60),
   },
   price: {
-    type: Sequelize.INTEGER(100),
+    type: Sequelize.INTEGER,
   },
   highday: {
-    type: Sequelize.INTEGER(100),
+    type: Sequelize.INTEGER,
   },
   lowday: {
-    type: Sequelize.INTEGER(100),
+    type: Sequelize.INTEGER,
   },
   changepct24hour: {
-    type: Sequelize.INTEGER(100),
+    type: Sequelize.INTEGER,
   },
 });
 module.exports = Cryptos;
