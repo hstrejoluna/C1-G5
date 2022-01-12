@@ -1,14 +1,10 @@
 const express = require("express");
 const routes = require("./routes");
 const session = require("express-session");
-const MongoStore = require("connect-mongo");
 const cors = require("cors");
-
 
 require("dotenv").config({ path: "variables.env" });
 require("./config/db");
-
-
 
 const app = express();
 app.use(express.json());
@@ -16,19 +12,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors()); // backend
 app.use("/", routes());
 
-
 app.use(
   session({
-    secret: process.env.SECRET,
-    key: process.env.KEY,
+    secret: "G20",
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-      mongoUrl: process.env.DATABASE,
-    }),
   })
 );
 
+// Server and port
+const host = process.env.HOST || "0.0.0.0";
+const port = process.env.PORT || 3000;
 
-
-app.listen(process.env.PORT);
+app.listen(port, host, () => {
+  console.log(`Server running at http://${host}:${port}`);
+});
