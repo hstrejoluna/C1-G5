@@ -2,10 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const clientController = require("../controllers/clientController");
-const specialtyController = require("../controllers/specialtyController");
-const professionalController = require("../controllers/professionalController");
-const locationController = require("../controllers/locationController");
-const reservationController = require("../controllers/reservationController");
+const crypto = require("../controllers/crypto");
 
 module.exports = function () {
   //////////////////////////////////
@@ -27,118 +24,24 @@ module.exports = function () {
   // Elimina Cliente
   router.delete("/clients/:idClient", clientController.deleteClient);
 
-  //////////////////////////////////
-  // Operaciones para especialidades
-  //////////////////////////////////
-
-  // Agrega nuevas especialidades via POST
-  router.post("/specialties", specialtyController.newSpecialty);
-
-  // Obtiene todas las especialidades
-  router.get("/specialties", specialtyController.showSpecialties);
-
-  // Obtiene especialidad por Ubicacion (ID)
-  router.get(
-    "/specialties/:location",
-    specialtyController.showSpecialtiesByLocation
-  );
-
-  // Muestra una especialidad en especifico (ID)
-  router.get("/specialties/:idSpecialty", specialtyController.showSpecialty);
-
-  // Actualiza especialidad
-  router.put("/specialties/:idSpecialty", specialtyController.updateSpecialty);
-
-  // Elimina especialidad
-  router.delete(
-    "/specialties/:idSpecialty",
-    specialtyController.deleteSpecialty
-  );
-
   /////////////////////////////////
-  // Operaciones para profesionales
+  // Operaciones para cryptos (Cryptos)
   /////////////////////////////////
 
-  // Agrega nuevos profesionales via POST
-  router.post("/professionals", professionalController.newProfessional);
+  // Agrega nuevos cryptos via POST
+  router.post("/cryptos", crypto.newCrypto);
 
-  // Obtiene todos los profesionales
-  router.get("/professionals", professionalController.showProfessionals);
+  // Obtiene todos los cryptos
+  router.get("/cryptos", crypto.showCryptos);
 
-  // Muestra un profesional en especifico (ID)
-  router.get(
-    "/professionals/:idProfessional",
-    professionalController.showProfessional
-  );
+  // Muestra un crypto en especifico (ID)
+  router.get("/cryptos/:idCrypto", crypto.showCrypto);
 
-  // Obtiene a los profesionales que tienen tal Especialidad (ID)
-  router.get(
-    "/professionals/:specialty",
-    professionalController.showProfessionalsBySpecialty
-  );
+  // Actualiza crypto
+  router.put("/cryptos/:idCrypto", crypto.updateCrypto);
 
-  // Obtiene a los profesionales usando Especialidad y Ubicacion (ID)
-  router.get(
-    "/professionals/:location/:specialty",
-    professionalController.showProfessionalsByLocationAndSpecialty
-  );
-
-  // Actualiza profesional
-  router.put(
-    "/professionals/:idProfessional",
-    professionalController.updateProfessional
-  );
-
-  // Elimina profesional
-  router.delete(
-    "/professionals/:idProfessional",
-    professionalController.deleteProfessional
-  );
-
-  /////////////////////////////////
-  // Operaciones para ubicaciones (Locations)
-  /////////////////////////////////
-
-  // Agrega nuevos profesionales via POST
-  router.post("/locations", locationController.newLocation);
-
-  // Obtiene todos los profesionales
-  router.get("/locations", locationController.showLocations);
-
-  // Muestra un profesional en especifico (ID)
-  router.get("/locations/:idLocation", locationController.showLocation);
-
-  // Actualiza profesional
-  router.put("/locations/:idLocation", locationController.updateLocation);
-
-  // Elimina profesional
-  router.delete("/locations/:idLocation", locationController.deleteLocation);
-
-  /////////////////////////////////
-  // Operaciones para reservaciones
-  /////////////////////////////////
-
-  // Agrega una nueva reservacion via POST
-  router.post(
-    "/reservations",
-    clientController.newClient,
-    reservationController.newReservation
-  );
-
-  // Obtiene todas las reservaciones
-  router.get("/reservations", reservationController.showReservations);
-
-  // Muestra una reservacion en especifico (ID)
-  router.get(
-    "/reservations/:idReservation",
-    reservationController.showReservation
-  );
-
-  // Actualiza reservacion
-  router.put(
-    "/reservations/:idReservation",
-    reservationController.updateReservation
-  );
+  // Elimina crypto
+  router.delete("/cryptos/:idCrypto", crypto.deleteCrypto);
 
   return router;
 };
