@@ -34,6 +34,8 @@ module.exports = function () {
   // Obtiene todos los cryptos
   router.get("/cryptos", cryptoController.showCryptos);
 
+  router.get("/getCrypto", cryptoController.getCrypto);
+
   // Muestra un crypto en especifico (ID)
   router.get("/cryptos/:idCrypto", cryptoController.showCrypto);
 

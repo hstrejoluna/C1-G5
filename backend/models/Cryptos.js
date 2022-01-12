@@ -10,6 +10,9 @@ const Cryptos = db.define("cryptos", {
   name: {
     type: Sequelize.STRING(60),
   },
+  currency: {
+    type: Sequelize.STRING(60),
+  },
   price: {
     type: Sequelize.INTEGER,
   },
