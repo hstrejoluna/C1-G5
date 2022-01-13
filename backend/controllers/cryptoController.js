@@ -7,7 +7,7 @@ exports.getCrypto = async (req, res, next) => {
   const cryptos = {
     BTC: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=btc&tsyms=usd",
     ETH: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=eth&tsyms=usd",
-    DOGE: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=&tsyms=usd",
+    DOGE: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=doge&tsyms=usd",
   };
 
   const btc = await axios.get(cryptos.BTC);
@@ -15,48 +15,47 @@ exports.getCrypto = async (req, res, next) => {
   const doge = await axios.get(cryptos.DOGE);
 
   try {
-
-    console.log("precio es"+btc.data.DISPLAY.BTC.USD.PRICE);
     // call stored procedure
+    console.log("LLAMANDO A BTC" + btc.data.RAW.BTC.USD.TOSYMBOL);
     db.query(
-      "CALL getCrypto(:name :currency :price :highday :lowday :changepct24hour :lastupdate)",
+      "CALL getcrypto(:name, :currency, :price, :highday, :lowday, :changepct24h, :lastupdate);",
       {
         replacements: {
-          name: btc.data.DISPLAY.BTC.USD.FROMSYMBOL,
-          currency: btc.TOSYMBOL,
-          price: btc.PRICE,
-          highday: btc.HIGHDAY,
-          lowday: btc.LOWDAY,
-          changepct24hour: btc.CHANGEPCT24HOUR,
-          lastupdate: btc.LASTUPDATE,
+          name: btc.data.RAW.BTC.USD.FROMSYMBOL,
+          currency: btc.data.RAW.BTC.USD.TOSYMBOL,
+          price: btc.data.RAW.BTC.USD.PRICE,
+          highday: btc.data.RAW.BTC.USD.HIGHDAY,
+          lowday: btc.data.RAW.BTC.USD.LOWDAY,
+          changepct24h: btc.data.RAW.BTC.USD.CHANGEPCT24HOUR,
+          lastupdate: btc.data.DISPLAY.BTC.USD.LASTUPDATE,
         },
       }
     );
     db.query(
-      "CALL getCrypto(:name :currency :price :highday :lowday :changepct24hour :lastupdate)",
+      "CALL getcrypto(:name, :currency, :price, :highday, :lowday, :changepct24h, :lastupdate);",
       {
         replacements: {
-          name: eth.data.DISPLAY.BTC.USD.FROMSYMBOL,
-          currency: eth.TOSYMBOL,
-          price: eth.PRICE,
-          highday: eth.HIGHDAY,
-          lowday: eth.LOWDAY,
-          changepct24hour: eth.CHANGEPCT24HOUR,
-          lastupdate: eth.LASTUPDATE,
+          name: eth.data.RAW.ETH.USD.FROMSYMBOL,
+          currency: eth.data.RAW.ETH.USD.TOSYMBOL,
+          price: eth.data.RAW.ETH.USD.PRICE,
+          highday: eth.data.RAW.ETH.USD.HIGHDAY,
+          lowday: eth.data.RAW.ETH.USD.LOWDAY,
+          changepct24h: eth.data.RAW.ETH.USD.CHANGEPCT24HOUR,
+          lastupdate: eth.data.DISPLAY.ETH.USD.LASTUPDATE,
         },
       }
     );
     db.query(
-      "CALL getCrypto(:name :currency :price :highday :lowday :changepct24hour :lastupdate)",
+      "CALL getcrypto(:name, :currency, :price, :highday, :lowday, :changepct24h, :lastupdate);",
       {
         replacements: {
-          name: doge.NAME,
-          currency: doge.TOSYMBOL,
-          price: doge.PRICE,
-          highday: doge.HIGHDAY,
-          lowday: doge.LOWDAY,
-          changepct24hour: doge.CHANGEPCT24HOUR,
-          lastupdate: doge.LASTUPDATE,
+          name: doge.data.RAW.DOGE.USD.FROMSYMBOL,
+          currency: doge.data.RAW.DOGE.USD.TOSYMBOL,
+          price: doge.data.RAW.DOGE.USD.PRICE,
+          highday: doge.data.RAW.DOGE.USD.HIGHDAY,
+          lowday: doge.data.RAW.DOGE.USD.LOWDAY,
+          changepct24h: doge.data.RAW.DOGE.USD.CHANGEPCT24HOUR,
+          lastupdate: doge.data.DISPLAY.DOGE.USD.LASTUPDATE,
         },
       }
     );
